@@ -2,6 +2,12 @@
 
 Nourrice virtuelle pour enfants (Alexa) :woman: :baby_bottle: :baby: 
 
+## Utilisation
+
+**Invocation name:** mon bibou
+
+**Deployer que le lambda:** `ask deploy --lambda`
+
 ## Installation :gear:
 
 - Installer ask cli (https://developer.amazon.com/docs/smapi/quick-start-alexa-skills-kit-command-line-interface.html). Suivre la procédure jusqu'au bout (commande *ask init* notamment).
@@ -15,9 +21,9 @@ Nourrice virtuelle pour enfants (Alexa) :woman: :baby_bottle: :baby:
 - Ajouter comme déclencheur Alexa skill kit.
 - Dans l'onglet endpoint de votre skill renseignez l'ARN de votre fonction lambda, sauvegardez l'endpoint.
 - Exécuter :
-`$ ask clone`
+`ask clone`
 - Selectionner le skill que vous venez de créer --> le skill + lambda sont clonés. 
 - Deplacer le dossier .ask du skill que vous venez de cloner vers la racine du dossier du repo git. Il contient le fichier *config* qui permettra de spécifier quel skill et lambda vous voulez utiliser (les vôtres en l'occurrence). 
 - Une fois le fichier .ask/config déplacé dans le répo git, supprimer tout ce que vous venez de créer avec *ask clone*. 
 - Se placer dans le répo git et exécuter :
-`$ ask deploy`
+`ask deploy`
