@@ -3,7 +3,7 @@
     "publishingInformation": {
       "locales": {
         "fr-FR": {
-          "name": "BabouTest"
+          "name": "Bibou"
         }
       },
       "isAvailableWorldwide": true,
@@ -14,7 +14,7 @@
     "apis": {
       "custom": {
         "endpoint": {
-          "sourceDir": "./lambda/us-east-1_ask-custom-BabouTest-default"
+          "sourceDir": "./lambda/custom"
         },
         "interfaces": []
       }
