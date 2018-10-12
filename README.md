@@ -6,7 +6,7 @@ Nourrice virtuelle pour enfants (Alexa) :woman: :baby_bottle: :baby:
 
 **Invocation name:** mon bibou
 
-**Deployer que le lambda:** `ask deploy --lambda`
+**Deployer que le lambda:** `ask deploy --target lambda`
 
 ## Installation :gear:
 
