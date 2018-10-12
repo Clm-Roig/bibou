@@ -1,0 +1,11 @@
+{
+    "greetings": [
+        "Bonjour", 
+        "Bonjour, je suis Bibou",
+        "Bibou à la rescousse"
+    ],
+    "byes": [
+        "Au revoir",
+        "A plus tard"
+    ]
+}

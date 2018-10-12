@@ -1,6 +1,10 @@
 /* eslint-disable  func-names */
 /* eslint-disable  no-console */
 
+const general_s = require('./generalStrings.json')
+const greetings_s = general_s.greetings
+const byes_s = general_s.byes
+
 const Alexa = require("ask-sdk-core");
 
 const LaunchRequestHandler = {
@@ -8,29 +12,12 @@ const LaunchRequestHandler = {
     return handlerInput.requestEnvelope.request.type === "LaunchRequest";
   },
   handle(handlerInput) {
-    const speechText = "Bieeeeeenvenue";
+    const speechText = greetings_s[Math.floor(Math.random()*greetings_s.length)];  
 
     return handlerInput.responseBuilder
       .speak(speechText)
       .reprompt(speechText)
-      .withSimpleCard("Hello World", speechText)
-      .getResponse();
-  }
-};
-
-const HelloWorldIntentHandler = {
-  canHandle(handlerInput) {
-    return (
-      handlerInput.requestEnvelope.request.type === "IntentRequest" &&
-      handlerInput.requestEnvelope.request.intent.name === "HelloWorldIntent"
-    );
-  },
-  handle(handlerInput) {
-    const speechText = "Hello World!";
-
-    return handlerInput.responseBuilder
-      .speak(speechText)
-      .withSimpleCard("Hello World", speechText)
+      .withSimpleCard(speechText)
       .getResponse();
   }
 };
@@ -64,11 +51,11 @@ const CancelAndStopIntentHandler = {
     );
   },
   handle(handlerInput) {
-    const speechText = "Goodbye!";
+    const speechText = byes_s[Math.floor(Math.random()*byes_s.length)];  
 
     return handlerInput.responseBuilder
       .speak(speechText)
-      .withSimpleCard("Hello World", speechText)
+      .withSimpleCard(speechText)
       .getResponse();
   }
 };
@@ -107,7 +94,6 @@ const skillBuilder = Alexa.SkillBuilders.custom();
 exports.handler = skillBuilder
   .addRequestHandlers(
     LaunchRequestHandler,
-    HelloWorldIntentHandler,
     HelpIntentHandler,
     CancelAndStopIntentHandler,
     SessionEndedRequestHandler
