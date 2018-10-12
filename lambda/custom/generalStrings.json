@@ -1,11 +1,16 @@
 {
-    "greetings": [
-        "Bonjour", 
-        "Bonjour, je suis Bibou",
-        "Bibou à la rescousse"
-    ],
     "byes": [
-        "Au revoir",
-        "A plus tard"
+        "Au revoir !",
+        "A plus tard !"
+    ],
+    "errors": [
+        "Je suis désolé, je n'ai pas compris ta demande. Peux-tu répéter s'il te plaît ?",
+        "Je ne comprends pas, que veux-tu faire ?"
+    ], 
+    "greetings": [
+        "Bonjour !", 
+        "Bonjour, je suis Bibou !",
+        "Bibou à la rescousse !",
+        "Coucou !"
     ]
 }

@@ -1,12 +1,16 @@
 /* eslint-disable  func-names */
 /* eslint-disable  no-console */
 
+// ===== Strings messages
 const general_s = require('./generalStrings.json')
-const greetings_s = general_s.greetings
 const byes_s = general_s.byes
+const errors_s = general_s.errors
+const greetings_s = general_s.greetings
 
 const Alexa = require("ask-sdk-core");
 
+
+// ===== Handlers
 const LaunchRequestHandler = {
   canHandle(handlerInput) {
     return handlerInput.requestEnvelope.request.type === "LaunchRequest";
@@ -81,14 +85,17 @@ const ErrorHandler = {
   },
   handle(handlerInput, error) {
     console.log(`Error handled: ${error.message}`);
+    const speechText = errors_s[Math.floor(Math.random()*errors_s.length)];  
 
     return handlerInput.responseBuilder
-      .speak("Sorry, I can't understand the command. Please say again.")
-      .reprompt("Sorry, I can't understand the command. Please say again.")
+      .speak(speechText)
+      .reprompt(speechText)
       .getResponse();
   }
 };
 
+
+// ====== Build skill
 const skillBuilder = Alexa.SkillBuilders.custom();
 
 exports.handler = skillBuilder
