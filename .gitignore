@@ -1,3 +1,4 @@
 .ask
 lambda/custom/node_modules
 .idea
+.vscode

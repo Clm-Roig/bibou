@@ -37,8 +37,7 @@ const HelloWorldIntentHandler = {
     const speechText = "Hello World!";
     return handlerInput.responseBuilder
       .speak(speechText)
-      .withSimpleCard("Hello World", speechText)
-      .withSimpleCard(speechText)
+      .reprompt(speechText)
       .getResponse();
   }
 };
@@ -111,6 +110,8 @@ const ErrorHandler = {
   }
 };
 
+const GuessMyNumberIntentHandler = require("./handlers/guessMyNumber")
+
 
 // ====== Build skill
 const skillBuilder = Alexa.SkillBuilders.custom();
@@ -118,6 +119,7 @@ const skillBuilder = Alexa.SkillBuilders.custom();
 exports.handler = skillBuilder
   .addRequestHandlers(
     LaunchRequestHandler,
+    GuessMyNumberIntentHandler,
     HelloWorldIntentHandler,
     HelpIntentHandler,
     CancelAndStopIntentHandler,
