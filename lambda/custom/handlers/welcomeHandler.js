@@ -24,6 +24,10 @@ const startStateHandlers = Alexa.CreateStateHandler(config.GAME_STATES.WELCOME_S
     this.response.speak(this.attributes.speechOutput).listen(this.attributes.speechOutput);
     this.emit(":responseReady");
   },
+  SingLullabyIntroIntent() {
+    this.handler.state = config.SING_LULLABY_STATE;
+    this.emitWithState("StartSinging");
+  },
   Unhandled() {
     let speechOutput = msgH.pickOne(MSG.errors);
     this.response.speak(speechOutput).listen(speechOutput);
