@@ -5,10 +5,12 @@
       "intents": [
         {
           "name": "GuessMyNumberIntroIntent",
+          "slots": [],
           "samples": [
             "Je veux deviner un nombre",
             "Jouons à devine un nombre",
-            "Fais-moi deviner un nombre"
+            "Fais-moi deviner un nombre",
+            "Devine nombre"
           ]
         },
         {
@@ -19,11 +21,7 @@
               "type": "AMAZON.NUMBER"
             }
           ],
-          "samples": [
-            "Le nombre {number}",
-            "C'est {number}",
-            "Est-ce que c'est {number}"
-          ]
+          "samples": ["Le nombre {number}", "C'est {number}", "Est-ce que c'est {number}"]
         },
         {
           "name": "AMAZON.CancelIntent",
@@ -43,6 +41,7 @@
         },
         {
           "name": "SingLullabyIntroIntent",
+          "slots": [],
           "samples": [
             "Chante",
             "Chante-moi quelque chose",
@@ -50,8 +49,34 @@
             "Je veux une berceuse",
             "Chante-moi une berceuse"
           ]
+        },
+        {
+          "name": "MessageIntent",
+          "slots": [
+            {
+              "name": "message",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "dit lui {message} ",
+            "dit {message}",
+            "envoie {message}",
+            "envoie {message} a maman",
+            "envoie un message a maman",
+            "envoie un message"
+          ]
+        },
+        {
+          "name": "AMAZON.NoIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.YesIntent",
+          "samples": []
         }
-      ]
+      ],
+      "types": []
     }
   }
 }

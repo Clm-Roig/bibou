@@ -3,11 +3,11 @@ const config = require("../config");
 const msgH = require("../messages/msgHelper");
 
 const GENERAL_MSG = require("../messages/generalMessages.json");
-const MSG = require('../messages/singLullabyMessages.json')
+const MSG = require("../messages/singLullabyMessages.json");
 
 // ================================
 
-const singLullabyHandler = Alexa.CreateStateHandler(config.SING_LULLABY_STATE, {
+const singLullabyHandler = Alexa.CreateStateHandler(config.GAME_STATES.SING_LULLABY_STATE, {
   StartSinging() {
     const speechOutput = "La lala lal je chante";
     this.response.speak(speechOutput).listen(speechOutput);
