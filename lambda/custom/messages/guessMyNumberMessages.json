@@ -5,8 +5,8 @@
         "Moins !"
     ],
     "itsMore": [    
-        "C'est plus !",
+        "C'est <phoneme alphabet='ipa' ph='plys'>plus</phoneme> !",
         "C'est plus grand !",
-        "Plus"
+        "<phoneme alphabet='ipa' ph='plys'>Plus</phoneme> "
     ]
 }

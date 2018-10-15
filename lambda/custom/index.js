@@ -9,7 +9,7 @@ const guessMyNumberStateHandler = require("./handlers/guessMyNumberHandler");
 
 const newSessionHandlers = {
   LaunchRequest: function() {
-    this.handler.state = config.GAME_STATES.WELCOME_STATE;
+    this.handler.state = config.WELCOME_STATE;
     this.emitWithState("Welcome");
   },
   Unhandled: function() {
@@ -23,6 +23,10 @@ exports.handler = function(event, context) {
   //alexa.appId = config.APP_ID;
   // To enable string internationalization (i18n) features, set a resources object.
   //alexa.resources = config.languageString;
-  alexa.registerHandlers(newSessionHandlers, welcomeStateHandler, guessMyNumberStateHandler);
+  alexa.registerHandlers(
+    newSessionHandlers, 
+    welcomeStateHandler, 
+    guessMyNumberStateHandler
+  );
   alexa.execute();
 };

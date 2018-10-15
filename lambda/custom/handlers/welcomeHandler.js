@@ -1,10 +1,13 @@
 const Alexa = require("alexa-sdk");
 const config = require("../config");
-const msg = require("../messages/generalMessages");
+const MSG = require("../messages/generalMessages");
+const msgH = require("../messages/msgHelper");
 
-const startStateHandlers = Alexa.CreateStateHandler(config.GAME_STATES.WELCOME_STATE, {
+// ==============================
+
+const startStateHandlers = Alexa.CreateStateHandler(config.WELCOME_STATE, {
   Welcome() {
-    let speechOutput = config.pickOne(msg.greetings);
+    let speechOutput = msgH.pickOne(MSG.greetings);
     this.response.speak(speechOutput).listen(speechOutput);
     this.emit(":responseReady");
   },
@@ -13,7 +16,7 @@ const startStateHandlers = Alexa.CreateStateHandler(config.GAME_STATES.WELCOME_S
     this.emitWithState("Start");
   },
   Unhandled() {
-    let speechOutput = "g pa kompri";
+    let speechOutput = msgH.pickOne(MSG.errors);
     this.response.speak(speechOutput).listen(speechOutput);
     this.emit(":responseReady");
   }
