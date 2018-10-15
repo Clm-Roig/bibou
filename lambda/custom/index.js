@@ -26,22 +26,6 @@ const LaunchRequestHandler = {
   }
 };
 
-const HelloWorldIntentHandler = {
-  canHandle(handlerInput) {
-    return (
-      handlerInput.requestEnvelope.request.type === "IntentRequest" &&
-      handlerInput.requestEnvelope.request.intent.name === "HelloWorldIntent"
-    );
-  },
-  handle(handlerInput) {
-    const speechText = "Hello World!";
-    return handlerInput.responseBuilder
-      .speak(speechText)
-      .reprompt(speechText)
-      .getResponse();
-  }
-};
-
 const HelpIntentHandler = {
   canHandle(handlerInput) {
     return (
@@ -120,7 +104,6 @@ exports.handler = skillBuilder
   .addRequestHandlers(
     LaunchRequestHandler,
     GuessMyNumberIntentHandler,
-    HelloWorldIntentHandler,
     HelpIntentHandler,
     CancelAndStopIntentHandler,
     SessionEndedRequestHandler

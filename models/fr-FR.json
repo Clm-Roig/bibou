@@ -8,7 +8,8 @@
           "samples": [
               "Je veux deviner un nombre",
               "Jouons à devine un nombre",
-              "Fais-moi deviner un nombre"
+              "Fais-moi deviner un nombre",
+              "Devine nombre"
           ]
         },
         {
@@ -20,7 +21,9 @@
             }
           ],
           "samples": [
-              "Le nombre {number}"
+              "Le nombre {number}",
+              "C'est {number}",
+              "Est-ce que c'est {number}"
           ]
         },
         {
@@ -38,14 +41,6 @@
         {
           "name": "AMAZON.NavigateHomeIntent",
           "samples": []
-        },
-        {
-          "name": "HelloWorldIntent",
-          "samples": [
-            "hello",
-            "say hello",
-            "say hello world"
-          ]
         }
       ]
     }
