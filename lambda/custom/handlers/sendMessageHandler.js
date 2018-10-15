@@ -34,7 +34,7 @@ const sendMessageHandler = Alexa.CreateStateHandler(config.STATES.MESSAGE_STATE,
     this.emitWithState("SomethingElse");
   },
   Unhandled() {
-    let speechOutput = "g pa kompri";
+    let speechOutput = "g pa kompris";
     this.response.speak(speechOutput).listen(speechOutput);
     this.emit(":responseReady");
   }
