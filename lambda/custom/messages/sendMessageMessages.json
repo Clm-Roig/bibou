@@ -1,0 +1,12 @@
+{
+  "VALIDATION_MESSAGE": [
+    "Es-tu sur de vouloir envoyer : %s a ta maman ?",
+    "Tu veux bien envoyer : %s a ta maman ?",
+    "Es-tu sur de vouloir envoyer : %s ?",
+    "Tu veux bien envoyer : %s ?"
+  ],
+  "NO_MESSAGE_SPECIFIED": ["Bien sur que veux-tu lui dire ?", "Avec plaisir on lui envoie quoi ?", "Dit m'en plus"],
+  "JUST_SENT_MESSAGE": ["Je viens d'envoyer %s. ", "Ta maman a bien reçu %s. ", "%s a bien était envoyé. "],
+  "DIDNT_SEND_MESSAGE": ["Ok je ne l'ai pas envoyé. ", "Pas de soucis rien d'envoyé. "],
+  "DIDNT_SPECIFIED_MESSAGE": ["Tu ne m'as pas dit quoi lui envoyer", "Je ne sais pas encore quoi envoyer"]
+}

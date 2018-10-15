@@ -1,3 +1,4 @@
+const util = require("util");
 module.exports = {
-    pickOne: array => array[Math.floor(Math.random() * array.length)]
-}
+  pickOne: (array, ...strings) => util.format(array[Math.floor(Math.random() * array.length)], ...strings)
+};
