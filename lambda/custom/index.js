@@ -1,114 +1,28 @@
-/* eslint-disable  func-names */
-/* eslint-disable  no-console */
+const Alexa = require("alexa-sdk");
+const config = require("./config"); // Config
 
-// ===== Strings messages
-const general_msg = require('./messages/generalMessages.json')
-const BYES_msg = general_msg.byes
-const ERRORS_msg = general_msg.errors
-const GREETINGS_msg = general_msg.greetings
-const WHAT_TO_DO_msg = general_msg.whatToDo
+/**
+ * We import handlers as they are separated in different files
+ */
+const welcomeStateHandler = require("./handlers/welcomeHandler");
+const guessMyNumberStateHandler = require("./handlers/guessMyNumberHandler");
 
-const Alexa = require("ask-sdk-core");
-
-
-// ===== Handlers
-const LaunchRequestHandler = {
-  canHandle(handlerInput) {
-    return handlerInput.requestEnvelope.request.type === "LaunchRequest";
+const newSessionHandlers = {
+  LaunchRequest: function() {
+    this.handler.state = config.GAME_STATES.WELCOME_STATE;
+    this.emitWithState("Welcome");
   },
-  handle(handlerInput) {
-    const speechText = GREETINGS_msg[Math.floor(Math.random()*GREETINGS_msg.length)] + " " + WHAT_TO_DO_msg[Math.floor(Math.random()*WHAT_TO_DO_msg.length)];  
-
-    return handlerInput.responseBuilder
-      .speak(speechText)
-      .reprompt(speechText)
-      .getResponse();
+  Unhandled: function() {
+    this.response.speak("Pas compris").listen("Pas compris");
+    this.emit(":responseReady");
   }
 };
 
-const HelpIntentHandler = {
-  canHandle(handlerInput) {
-    return (
-      handlerInput.requestEnvelope.request.type === "IntentRequest" &&
-      handlerInput.requestEnvelope.request.intent.name === "AMAZON.HelpIntent"
-    );
-  },
-  handle(handlerInput) {
-    const speechText = "You can say hello to me!";
-
-    return handlerInput.responseBuilder
-      .speak(speechText)
-      .reprompt(speechText)
-      .withSimpleCard("Hello World", speechText)
-      .getResponse();
-  }
+exports.handler = function(event, context) {
+  const alexa = Alexa.handler(event, context);
+  //alexa.appId = config.APP_ID;
+  // To enable string internationalization (i18n) features, set a resources object.
+  //alexa.resources = config.languageString;
+  alexa.registerHandlers(newSessionHandlers, welcomeStateHandler, guessMyNumberStateHandler);
+  alexa.execute();
 };
-
-const CancelAndStopIntentHandler = {
-  canHandle(handlerInput) {
-    return (
-      handlerInput.requestEnvelope.request.type === "IntentRequest" &&
-      (handlerInput.requestEnvelope.request.intent.name ===
-        "AMAZON.CancelIntent" ||
-        handlerInput.requestEnvelope.request.intent.name ===
-          "AMAZON.StopIntent")
-    );
-  },
-  handle(handlerInput) {
-    const speechText = BYES_msg[Math.floor(Math.random()*BYES_msg.length)];  
-
-    return handlerInput.responseBuilder
-      .speak(speechText)
-      .withSimpleCard(speechText)
-      .getResponse();
-  }
-};
-
-const SessionEndedRequestHandler = {
-  canHandle(handlerInput) {
-    return handlerInput.requestEnvelope.request.type === "SessionEndedRequest";
-  },
-  handle(handlerInput) {
-    console.log(
-      `Session ended with reason: ${
-        handlerInput.requestEnvelope.request.reason
-      }`
-    );
-
-    return handlerInput.responseBuilder.getResponse();
-  }
-};
-
-const ErrorHandler = {
-  canHandle() {
-    return true;
-  },
-  handle(handlerInput, error) {
-    console.log(`Error handled: ${error.message}`);
-    const speechText = ERRORS_msg[Math.floor(Math.random()*ERRORS_msg.length)];  
-
-    return handlerInput.responseBuilder
-      .speak(speechText)
-      .reprompt(speechText)
-      .getResponse();
-  }
-};
-
-const GuessMyNumberIntentHandler = require("./handlers/guessMyNumber")
-const SingLullabyIntentHandler = require("./handlers/singLullaby")
-
-
-// ====== Build skill
-const skillBuilder = Alexa.SkillBuilders.custom();
-
-exports.handler = skillBuilder
-  .addRequestHandlers(
-    CancelAndStopIntentHandler,
-    GuessMyNumberIntentHandler,
-    HelpIntentHandler,
-    LaunchRequestHandler,
-    SessionEndedRequestHandler,
-    SingLullabyIntentHandler
-  )
-  .addErrorHandlers(ErrorHandler)
-  .lambda();

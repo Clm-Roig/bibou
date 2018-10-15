@@ -1,4 +1,5 @@
 .ask
 lambda/custom/node_modules
+lambda/custom/MailSender/node_modules
 .idea
 .vscode
