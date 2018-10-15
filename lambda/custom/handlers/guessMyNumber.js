@@ -3,9 +3,9 @@ const NONE = "none"
 
 const MAX_NUMBER_TO_GUESS = 100
 
-const msg = require('../messages/guessMyNumberMessages.json')
-const itsLess_msg = msg.itsLess
-const itsMore_msg = msg.itsMore
+const MSG = require('../messages/guessMyNumberMessages.json')
+const ITS_LESS_MSG = MSG.itsLess
+const ITS_MORE_MSG = MSG.itsMore
 
 module.exports = {
   canHandle: (handlerInput) => {
@@ -33,10 +33,10 @@ module.exports = {
       let number = handlerInput.requestEnvelope.request.intent.slots.number.value
       if(sessionAttributes.state == GAME){
         if(number < sessionAttributes.numberToGuess){
-          speechText = itsMore_msg[Math.floor(Math.random()*itsMore_msg.length)]
+          speechText = ITS_MORE_MSG[Math.floor(Math.random()*ITS_MORE_MSG.length)]
           sessionAttributes.turn += 1
         } else if(number > sessionAttributes.numberToGuess) {
-          speechText = itsLess_msg[Math.floor(Math.random()*itsLess_msg.length)]
+          speechText = ITS_LESS_MSG[Math.floor(Math.random()*ITS_LESS_MSG.length)]
           sessionAttributes.turn += 1
         } else {
           speechText = `Bingo ! Tu as gagné en ${sessionAttributes.turn} tours !`
