@@ -3,7 +3,7 @@ const config = require("../config");
 const MSG = require("../messages/sendMessageMessages");
 const msgH = require("../messages/msgHelper");
 
-const sendMessageHandler = Alexa.CreateStateHandler(config.GAME_STATES.MESSAGE_STATE, {
+const sendMessageHandler = Alexa.CreateStateHandler(config.STATES.MESSAGE_STATE, {
   MessageIntent() {
     let speechOutput = "";
     if ((value = this.event.request.intent.slots.message.value)) {
@@ -20,7 +20,7 @@ const sendMessageHandler = Alexa.CreateStateHandler(config.GAME_STATES.MESSAGE_S
       //Send email
       this.attributes.speechOutput = msgH.pickOne(MSG.JUST_SENT_MESSAGE, this.attributes.toSend);
       this.attributes.toSend = undefined;
-      this.handler.state = config.GAME_STATES.WELCOME_STATE;
+      this.handler.state = config.STATES.WELCOME_STATE;
       this.emitWithState("SomethingElse");
     } else {
       const speech = msgH.pickOne(MSG.DIDNT_SPECIFIED_MESSAGE);
@@ -30,7 +30,7 @@ const sendMessageHandler = Alexa.CreateStateHandler(config.GAME_STATES.MESSAGE_S
   },
   "AMAZON.NoIntent": function denie() {
     this.attributes.speechOutput = msgH.pickOne(MSG.DIDNT_SEND_MESSAGE);
-    this.handler.state = config.GAME_STATES.WELCOME_STATE;
+    this.handler.state = config.STATES.WELCOME_STATE;
     this.emitWithState("SomethingElse");
   },
   Unhandled() {

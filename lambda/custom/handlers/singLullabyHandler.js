@@ -7,7 +7,7 @@ const MSG = require("../messages/singLullabyMessages.json");
 
 // ================================
 
-const singLullabyHandler = Alexa.CreateStateHandler(config.GAME_STATES.SING_LULLABY_STATE, {
+const singLullabyHandler = Alexa.CreateStateHandler(config.STATES.SING_LULLABY_STATE, {
   StartSinging() {
     const speechOutput = "La lala lal je chante";
     this.response.speak(speechOutput).listen(speechOutput);

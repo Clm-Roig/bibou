@@ -5,18 +5,18 @@ const msgH = require("../messages/msgHelper");
 
 // ==============================
 
-const startStateHandlers = Alexa.CreateStateHandler(config.GAME_STATES.WELCOME_STATE, {
+const startStateHandlers = Alexa.CreateStateHandler(config.STATES.WELCOME_STATE, {
   Welcome() {
     let speechOutput = msgH.pickOne(MSG.greetings);
     this.response.speak(speechOutput).listen(speechOutput);
     this.emit(":responseReady");
   },
   GuessMyNumberIntroIntent() {
-    this.handler.state = config.GAME_STATES.GUESS_MY_NUMBER_STATE;
+    this.handler.state = config.STATES.GUESS_MY_NUMBER_STATE;
     this.emitWithState("Start");
   },
   MessageIntent() {
-    this.handler.state = config.GAME_STATES.MESSAGE_STATE;
+    this.handler.state = config.STATES.MESSAGE_STATE;
     this.emitWithState("MessageIntent");
   },
   SomethingElse() {

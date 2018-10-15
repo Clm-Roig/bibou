@@ -11,7 +11,7 @@ const singLullabyStateHandler = require("./handlers/singLullabyHandler");
 
 const newSessionHandlers = {
   LaunchRequest: function() {
-    this.handler.state = config.GAME_STATES.WELCOME_STATE;
+    this.handler.state = config.STATES.WELCOME_STATE;
     this.emitWithState("Welcome");
   },
   Unhandled: function() {
