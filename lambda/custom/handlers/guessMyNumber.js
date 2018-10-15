@@ -25,7 +25,7 @@ module.exports = {
         Object.assign(sessionAttributes, { 
           state: GAME,
           numberToGuess,   
-          turn: 0 
+          turn: 1 
         })
         handlerInput.attributesManager.setSessionAttributes(sessionAttributes)
     } else {
