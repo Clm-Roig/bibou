@@ -6,6 +6,7 @@ const config = require("./config"); // Config
  */
 const welcomeStateHandler = require("./handlers/welcomeHandler");
 const guessMyNumberStateHandler = require("./handlers/guessMyNumberHandler");
+const singLullabyStateHandler = require("./handlers/singLullabyHandler");
 
 const newSessionHandlers = {
   LaunchRequest: function() {
@@ -24,9 +25,10 @@ exports.handler = function(event, context) {
   // To enable string internationalization (i18n) features, set a resources object.
   //alexa.resources = config.languageString;
   alexa.registerHandlers(
+    guessMyNumberStateHandler,
     newSessionHandlers, 
-    welcomeStateHandler, 
-    guessMyNumberStateHandler
+    singLullabyStateHandler,
+    welcomeStateHandler
   );
   alexa.execute();
 };

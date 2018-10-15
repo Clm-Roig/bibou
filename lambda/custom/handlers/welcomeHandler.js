@@ -15,6 +15,10 @@ const startStateHandlers = Alexa.CreateStateHandler(config.WELCOME_STATE, {
     this.handler.state = config.GAME_STATES.GUESS_MY_NUMBER_STATE;
     this.emitWithState("Start");
   },
+  SingLullabyIntroIntent() {
+    this.handler.state = config.SING_LULLABY_STATE
+    this.emitWithState("StartSinging")
+  },
   Unhandled() {
     let speechOutput = msgH.pickOne(MSG.errors);
     this.response.speak(speechOutput).listen(speechOutput);
