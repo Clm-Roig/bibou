@@ -12,5 +12,10 @@
         "Bonjour, je suis Bibou !",
         "Bibou à la rescousse !",
         "Coucou !"
+    ],
+    "whatToDo": [
+        "Que veux-tu faire ?",
+        "De quoi as-tu envie ?",
+        "Jouons ensemble !"
     ]
 }

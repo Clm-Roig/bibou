@@ -6,6 +6,7 @@ const general_s = require('./generalStrings.json')
 const byes_s = general_s.byes
 const errors_s = general_s.errors
 const greetings_s = general_s.greetings
+const whatToDo_s = general_s.whatToDo
 
 const Alexa = require("ask-sdk-core");
 
@@ -16,12 +17,11 @@ const LaunchRequestHandler = {
     return handlerInput.requestEnvelope.request.type === "LaunchRequest";
   },
   handle(handlerInput) {
-    const speechText = greetings_s[Math.floor(Math.random()*greetings_s.length)];  
+    const speechText = greetings_s[Math.floor(Math.random()*greetings_s.length)] + " " + whatToDo_s[Math.floor(Math.random()*whatToDo_s.length)];  
 
     return handlerInput.responseBuilder
       .speak(speechText)
       .reprompt(speechText)
-      .withSimpleCard(speechText)
       .getResponse();
   }
 };
