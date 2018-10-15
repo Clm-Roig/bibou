@@ -95,6 +95,7 @@ const ErrorHandler = {
 };
 
 const GuessMyNumberIntentHandler = require("./handlers/guessMyNumber")
+const SingLullabyIntentHandler = require("./handlers/singLullaby")
 
 
 // ====== Build skill
@@ -102,11 +103,12 @@ const skillBuilder = Alexa.SkillBuilders.custom();
 
 exports.handler = skillBuilder
   .addRequestHandlers(
-    LaunchRequestHandler,
+    CancelAndStopIntentHandler,
     GuessMyNumberIntentHandler,
     HelpIntentHandler,
-    CancelAndStopIntentHandler,
-    SessionEndedRequestHandler
+    LaunchRequestHandler,
+    SessionEndedRequestHandler,
+    SingLullabyIntentHandler
   )
   .addErrorHandlers(ErrorHandler)
   .lambda();
