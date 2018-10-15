@@ -1,0 +1,12 @@
+{
+    "itsLess": [
+        "C'est moins !",
+        "C'est plus petit !",
+        "Moins !"
+    ],
+    "itsMore": [    
+        "C'est plus !",
+        "C'est plus grand !",
+        "Plus"
+    ]
+}

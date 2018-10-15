@@ -2,11 +2,11 @@
 /* eslint-disable  no-console */
 
 // ===== Strings messages
-const general_s = require('./generalStrings.json')
-const byes_s = general_s.byes
-const errors_s = general_s.errors
-const greetings_s = general_s.greetings
-const whatToDo_s = general_s.whatToDo
+const general_msg = require('./messages/generalMessages.json')
+const byes_msg = general_msg.byes
+const errors_msg = general_msg.errors
+const greetings_msg = general_msg.greetings
+const whatToDo_msg = general_msg.whatToDo
 
 const Alexa = require("ask-sdk-core");
 
@@ -17,7 +17,7 @@ const LaunchRequestHandler = {
     return handlerInput.requestEnvelope.request.type === "LaunchRequest";
   },
   handle(handlerInput) {
-    const speechText = greetings_s[Math.floor(Math.random()*greetings_s.length)] + " " + whatToDo_s[Math.floor(Math.random()*whatToDo_s.length)];  
+    const speechText = greetings_msg[Math.floor(Math.random()*greetings_msg.length)] + " " + whatToDo_msg[Math.floor(Math.random()*whatToDo_msg.length)];  
 
     return handlerInput.responseBuilder
       .speak(speechText)
@@ -71,7 +71,7 @@ const CancelAndStopIntentHandler = {
     );
   },
   handle(handlerInput) {
-    const speechText = byes_s[Math.floor(Math.random()*byes_s.length)];  
+    const speechText = byes_msg[Math.floor(Math.random()*byes_msg.length)];  
 
     return handlerInput.responseBuilder
       .speak(speechText)
@@ -101,7 +101,7 @@ const ErrorHandler = {
   },
   handle(handlerInput, error) {
     console.log(`Error handled: ${error.message}`);
-    const speechText = errors_s[Math.floor(Math.random()*errors_s.length)];  
+    const speechText = errors_msg[Math.floor(Math.random()*errors_msg.length)];  
 
     return handlerInput.responseBuilder
       .speak(speechText)
