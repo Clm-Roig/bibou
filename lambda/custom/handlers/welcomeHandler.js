@@ -25,7 +25,7 @@ const startStateHandlers = Alexa.CreateStateHandler(config.STATES.WELCOME_STATE,
     this.emit(":responseReady");
   },
   SingLullabyIntroIntent() {
-    this.handler.state = config.SING_LULLABY_STATE;
+    this.handler.state = config.STATE.SING_LULLABY_STATE;
     this.emitWithState("StartSinging");
   },
   Unhandled() {
