@@ -39,9 +39,8 @@ const sendMessageHandler = Alexa.CreateStateHandler(config.STATES.MESSAGE_STATE,
           this.emit(":responseReady");
         })
         .catch(err => {
-          alexa.response
-            .speak("Tu n'as pas donné l'accès a l'adresse email, va sur l'application changer ca !")
-            .listen("Tu n'as pas donné l'accès a l'adresse email, va sur l'application changer ca !");
+          speechOutput = msgH.pickOne(MSG.EMAIL_NOT_GIVEN);
+          alexa.response.speak(speechOutput).listen(speechOutput);
           const permissions = ["alexa::profile:email:read"];
           alexa.response.askForPermissionsConsentCard(permissions);
           alexa.emit(":responseReady");
@@ -60,7 +59,6 @@ const sendMessageHandler = Alexa.CreateStateHandler(config.STATES.MESSAGE_STATE,
   },
   "AMAZON.YesIntent": function confirm() {
     if (this.attributes.toSend) {
-      //Send email
       sendMail("Alexa", "Message from bibou", this.attributes.toSend, [this.attributes.email])
         .then(res => {
           this.attributes.speechOutput = msgH.pickOne(MSG.JUST_SENT_MESSAGE, this.attributes.toSend);
