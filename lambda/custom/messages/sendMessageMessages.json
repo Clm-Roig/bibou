@@ -8,5 +8,7 @@
   "NO_MESSAGE_SPECIFIED": ["Bien sur que veux-tu lui dire ?", "Avec plaisir on lui envoie quoi ?", "Dit m'en plus"],
   "JUST_SENT_MESSAGE": ["Je viens d'envoyer %s. ", "Ta maman a bien reçu %s. ", "%s a bien était envoyé. "],
   "DIDNT_SEND_MESSAGE": ["Ok je ne l'ai pas envoyé. ", "Pas de soucis rien d'envoyé. "],
-  "DIDNT_SPECIFIED_MESSAGE": ["Tu ne m'as pas dit quoi lui envoyer", "Je ne sais pas encore quoi envoyer"]
+  "COULDNT_SEND_MESSAGE": ["Oups je n'ai pas réussi a envoyer le message, essaye plus tard. "],
+  "DIDNT_SPECIFIED_MESSAGE": ["Tu ne m'as pas dit quoi lui envoyer", "Je ne sais pas encore quoi envoyer"],
+  "EMAIL_NOT_GIVEN": ["Tu n'as pas donné l'accès a l'adresse email, va sur l'application changer ca !"]
 }
