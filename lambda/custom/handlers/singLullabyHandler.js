@@ -5,7 +5,7 @@ const msgH = require("../messages/msgHelper");
 const GENERAL_MSG = require("../messages/generalMessages.json");
 const MSG = require('../messages/singLullabyMessages.json');
 
-const LULLABY_URL = "https://s3.amazonaws.com/bibou/invocation.mp3"
+const LULLABY_URL = "https://s3.amazonaws.com/bibou/little_angel.mp3"
 
 // ================================
 
