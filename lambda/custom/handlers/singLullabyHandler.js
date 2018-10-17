@@ -12,12 +12,14 @@ const LULLABIES = {
     "https://s3.amazonaws.com/bibou/little_cat.mp3",
     "https://s3.amazonaws.com/bibou/sleep_music.mp3",
     "https://s3.amazonaws.com/bibou/sweet_dreams.mp3",
+    "https://s3.amazonaws.com/bibou/morning_star.mp3"
   ],
   "names": [
     "petit ange",
     "petit chat",
     "dodo",
-    "doux rêves"
+    "doux rêves",
+    "l'étoile du matin"
   ]
 }
 
