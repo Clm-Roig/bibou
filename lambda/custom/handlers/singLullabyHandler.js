@@ -25,12 +25,12 @@ const LULLABIES = {
 
 const singLullabyHandler = Alexa.CreateStateHandler(config.STATES.SING_LULLABY_STATE, {
   ListLullabies() {
-    let beginningMsg = msgH.pickOne(MSG.listLullabies)
+    let beginningMsg = msgH.pickOne(MSG.listLullabies) + " "
     let lullabiesNames = LULLABIES.names.join(", ")
     let speechOutput = beginningMsg.concat(lullabiesNames)
     this.handler.state = config.STATES.WELCOME_STATE
     this.response.speak(speechOutput).listen(speechOutput)
-    this.emitWithState(":responseReady")
+    this.emit(":responseReady")
   },
   StartRandomSinging() {
     let lullaby_url = MsgH.pickOne(LULLABIES.url)
