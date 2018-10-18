@@ -63,7 +63,7 @@
                         }
                     ],
                     "samples": [
-                        "dis(lui {message} ",
+                        "dis-lui {message} ",
                         "dis {message}",
                         "envoie {message}",
                         "envoie {message} à maman",
