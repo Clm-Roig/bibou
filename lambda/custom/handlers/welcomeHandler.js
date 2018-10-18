@@ -11,27 +11,38 @@ const startStateHandlers = Alexa.CreateStateHandler(config.STATES.WELCOME_STATE,
     this.response.speak(speechOutput).listen(speechOutput);
     this.emit(":responseReady");
   },
+
   GuessMyNumberIntroIntent() {
     this.handler.state = config.STATES.GUESS_MY_NUMBER_STATE;
     this.emitWithState("Start");
   },
+
   MessageIntent() {
     this.handler.state = config.STATES.MESSAGE_STATE;
     this.emitWithState("MessageIntent");
   },
+
   SomethingElse() {
     this.attributes.speechOutput += " Puis-je faire autre chose ?";
     this.response.speak(this.attributes.speechOutput).listen(this.attributes.speechOutput);
     this.emit(":responseReady");
   },
+
+  // ==== Lullabies
   ListLullabiesIntent() {
     this.handler.state = config.STATES.SING_LULLABY_STATE;
     this.emitWithState("ListLullabies");
+  },
+  SingLullabyIntent() {
+    this.handler.state = config.STATES.SING_LULLABY_STATE;
+    this.emitWithState("StartSinging");
   },
   SingRandomLullabyIntent() {
     this.handler.state = config.STATES.SING_LULLABY_STATE;
     this.emitWithState("StartRandomSinging");
   },
+
+  // ==== Unhandled
   Unhandled() {
     let speechOutput = msgH.pickOne(MSG.errors);
     this.response.speak(speechOutput).listen(speechOutput);
