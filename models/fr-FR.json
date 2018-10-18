@@ -63,11 +63,13 @@
                       }
                   ],
                   "samples": [
-                      "dit lui {message} ",
-                      "dit {message}",
+                      "dis-lui {message} ",
+                      "dis {message}",
                       "envoie {message}",
-                      "envoie {message} a maman",
-                      "envoie un message a maman",
+                      "envoie {message} à maman",
+                      "envoie un message à maman",
+                      "envoie {message} à papa",
+                      "envoie un message à papa",
                       "envoie un message"
                   ]
               },
