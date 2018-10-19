@@ -4,7 +4,6 @@ const msgH = require("../messages/msgHelper");
 
 const GENERAL_MSG = require("../messages/generalMessages.json");
 const MSG = require('../messages/singLullabyMessages.json');
-const MsgH = require('../messages/msgHelper')
 
 const LULLABIES = Array(
     {
@@ -55,7 +54,7 @@ const singLullabyHandler = Alexa.CreateStateHandler(config.STATES.SING_LULLABY_S
     }
     this.handler.state = config.STATES.WELCOME_STATE
     this.response.speak(speechOutput).listen(speechOutput)
-    this.emit(":responseReady")
+    this.emitWithState("SomethingElse")
   },
 
   StartRandomSinging() {

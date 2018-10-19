@@ -23,7 +23,7 @@ const startStateHandlers = Alexa.CreateStateHandler(config.STATES.WELCOME_STATE,
   },
 
   SomethingElse() {
-    this.attributes.speechOutput += " Puis-je faire autre chose ?";
+    this.attributes.speechOutput += " " + msgH.pickOne(MSG.somethingElse);
     this.response.speak(this.attributes.speechOutput).listen(this.attributes.speechOutput);
     this.emit(":responseReady");
   },

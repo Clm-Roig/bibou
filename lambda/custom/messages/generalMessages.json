@@ -14,6 +14,11 @@
         "Bibou à la rescousse !",
         "Coucou !"
     ],
+    "somethingElse": [
+        "Puis-je faire autre chose ?",
+        "Tu veux faire quelque chose d'autre ?",
+        "Que veux-tu faire maintenant ?"
+    ],
     "whatToDo": [
         "Que veux-tu faire ?",
         "De quoi as-tu envie ?",
