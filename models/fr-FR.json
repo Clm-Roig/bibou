@@ -106,6 +106,37 @@
                         "Chante-moi {lullaby}",
                         "Chante {lullaby}"
                     ]
+                },
+                {
+                    "name": "DidNotUnderstandIntent",
+                    "slots": [],
+                    "samples": [
+                        "fdsnjiyty",
+                        "qfgkdjsqogfdf",
+                        "oifudsisdjfsdfds",
+                        "soduifhfdfqsdgd",
+                        "qsdigfdkjgndfdjkldsm",
+                        "kldjqskldnqiisijdjkb ",
+                        "oqsdqsdqlsdjqskdlqsmd q",
+                        "qsdiqsydguqsdqsd q",
+                        "qsduiqsydhuqsyvd qs d",
+                        "qsidyh qusygdqsud qs",
+                        "qsd uhyqsudgqs ydqs d",
+                        "qsdooiqsudi hqyisduqs ",
+                        "qsdqsdqsdoqsj iqls d",
+                        "qs dpokqsodjqsodisq d",
+                        "qsdqs dhoqsui odqsd qs",
+                        "doopqsdqsdqspd",
+                        "qsoid jqiusd qs",
+                        "ojqsdiu qsdqsdqs dqs",
+                        "qs dkqs idsqijodoqsiud sqidqs ",
+                        "hjfghkjgfj",
+                        "jkfhjg",
+                        "jfgkjhfd",
+                        "gfhdf",
+                        "dfgh",
+                        "qsdjksqdgdsfh"
+                    ]
                 }
             ],
             "types": []

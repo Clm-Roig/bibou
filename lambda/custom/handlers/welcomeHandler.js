@@ -41,6 +41,10 @@ const startStateHandlers = Alexa.CreateStateHandler(config.STATES.WELCOME_STATE,
     this.handler.state = config.STATES.SING_LULLABY_STATE;
     this.emitWithState("StartRandomSinging");
   },
+  DidNotUnderstandIntent() {
+    this.handler.state = config.STATES.DID_NOT_UNDERSTAND_STATE;
+    this.emitWithState("DidNotUnderstand");
+  },
 
   // ==== Unhandled
   Unhandled() {

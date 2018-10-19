@@ -1,13 +1,14 @@
 const Alexa = require("alexa-sdk");
-const config = require("./config"); // Config
+const config = require("./config");
 
 /**
  * We import handlers as they are separated in different files
  */
-const welcomeStateHandler = require("./handlers/welcomeHandler");
+const didNotUnderstandHandler = require("./handlers/didNotUnderstandHandler");
 const guessMyNumberStateHandler = require("./handlers/guessMyNumberHandler");
 const sendMessageHandler = require("./handlers/sendMessageHandler");
 const singLullabyStateHandler = require("./handlers/singLullabyHandler");
+const welcomeStateHandler = require("./handlers/welcomeHandler");
 
 const newSessionHandlers = {
   LaunchRequest: function() {
@@ -26,11 +27,12 @@ exports.handler = function(event, context) {
   // To enable string internationalization (i18n) features, set a resources object.
   //alexa.resources = config.languageString;
   alexa.registerHandlers(
-    welcomeStateHandler,
-    guessMyNumberStateHandler,
-    sendMessageHandler,
-    singLullabyStateHandler,
-    newSessionHandlers
+      guessMyNumberStateHandler,
+      newSessionHandlers,
+      sendMessageHandler,
+      singLullabyStateHandler,
+      welcomeStateHandler,
+      didNotUnderstandHandler
   );
   alexa.execute();
 };
