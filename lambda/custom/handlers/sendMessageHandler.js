@@ -85,7 +85,7 @@ const sendMessageHandler = Alexa.CreateStateHandler(config.STATES.MESSAGE_STATE,
     this.emitWithState("SomethingElse");
   },
   Unhandled() {
-    let speechOutput = "g pa kompris";
+    let speechOutput = "Je n'ai pas compris.";
     this.response.speak(speechOutput).listen(speechOutput);
     this.emit(":responseReady");
   }
