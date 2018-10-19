@@ -1,6 +1,7 @@
 {
   "intro": [
-    "Bienvenue dans la lecture de contes. Lequel veux-tu ?"
+    "Bienvenue dans la lecture de contes. Lequel veux-tu ?",
+    "Lisons une histoire ! Lequel veux-tu ?"
   ],
   "tale_1": {
     "intro": "Conte Le rêve d'Eliot. ",
