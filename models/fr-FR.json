@@ -1,145 +1,179 @@
 {
-    "interactionModel": {
-        "languageModel": {
-            "invocationName": "mon bibou",
-            "intents": [
-                {
-                    "name": "GuessMyNumberIntroIntent",
-                    "slots": [],
-                    "samples": [
-                        "Je veux deviner un nombre",
-                        "Jouons à devine un nombre",
-                        "Fais-moi deviner un nombre",
-                        "Devine nombre"
-                    ]
-                },
-                {
-                    "name": "GuessMyNumberIntent",
-                    "slots": [
-                        {
-                            "name": "number",
-                            "type": "AMAZON.NUMBER"
-                        }
-                    ],
-                    "samples": [
-                        "Le nombre {number}",
-                        "C'est {number}",
-                        "Est-ce que c'est {number}"
-                    ]
-                },
-                {
-                    "name": "AMAZON.CancelIntent",
-                    "samples": []
-                },
-                {
-                    "name": "AMAZON.HelpIntent",
-                    "samples": []
-                },
-                {
-                    "name": "AMAZON.StopIntent",
-                    "samples": []
-                },
-                {
-                    "name": "AMAZON.NavigateHomeIntent",
-                    "samples": []
-                },
-                {
-                    "name": "SingRandomLullabyIntent",
-                    "slots": [],
-                    "samples": [
-                        "Chante",
-                        "Chante-moi quelque chose",
-                        "Une berceuse",
-                        "Je veux une berceuse",
-                        "Chante-moi une berceuse"
-                    ]
-                },
-                {
-                    "name": "MessageIntent",
-                    "slots": [
-                        {
-                            "name": "message",
-                            "type": "AMAZON.SearchQuery"
-                        }
-                    ],
-                    "samples": [
-                        "dis-lui {message} ",
-                        "dis {message}",
-                        "envoie {message}",
-                        "envoie {message} à maman",
-                        "envoie un message à maman",
-                        "envoie {message} à papa",
-                        "envoie un message à papa",
-                        "envoie un message"
-                    ]
-                },
-                {
-                    "name": "AMAZON.NoIntent",
-                    "samples": []
-                },
-                {
-                    "name": "AMAZON.YesIntent",
-                    "samples": []
-                },
-                {
-                    "name": "ListLullabiesIntent",
-                    "slots": [],
-                    "samples": [
-                        "Tu peux chanter quoi ",
-                        "Tu as quoi comme berceuses",
-                        "Liste les berceuses",
-                        "Qu'est-ce que tu sais chanter",
-                        "Quelles sont les berceuses disponibles "
-                    ]
-                },
-                {
-                    "name": "SingLullabyIntent",
-                    "slots": [
-                        {
-                            "name": "lullaby",
-                            "type": "AMAZON.SearchQuery"
-                        }
-                    ],
-                    "samples": [
-                        "Je veux que tu me chantes {lullaby}",
-                        "Tu peux chanter {lullaby} s'il te plaît",
-                        "Chante-moi {lullaby}",
-                        "Chante {lullaby}"
-                    ]
-                },
-                {
-                    "name": "DidNotUnderstandIntent",
-                    "slots": [],
-                    "samples": [
-                        "fdsnjiyty",
-                        "qfgkdjsqogfdf",
-                        "oifudsisdjfsdfds",
-                        "soduifhfdfqsdgd",
-                        "qsdigfdkjgndfdjkldsm",
-                        "kldjqskldnqiisijdjkb ",
-                        "oqsdqsdqlsdjqskdlqsmd q",
-                        "qsdiqsydguqsdqsd q",
-                        "qsduiqsydhuqsyvd qs d",
-                        "qsidyh qusygdqsud qs",
-                        "qsd uhyqsudgqs ydqs d",
-                        "qsdooiqsudi hqyisduqs ",
-                        "qsdqsdqsdoqsj iqls d",
-                        "qs dpokqsodjqsodisq d",
-                        "qsdqs dhoqsui odqsd qs",
-                        "doopqsdqsdqspd",
-                        "qsoid jqiusd qs",
-                        "ojqsdiu qsdqsdqs dqs",
-                        "qs dkqs idsqijodoqsiud sqidqs ",
-                        "hjfghkjgfj",
-                        "jkfhjg",
-                        "jfgkjhfd",
-                        "gfhdf",
-                        "dfgh",
-                        "qsdjksqdgdsfh"
-                    ]
-                }
-            ],
-            "types": []
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "mon bibou",
+      "intents": [
+        {
+          "name": "GuessMyNumberIntroIntent",
+          "slots": [],
+          "samples": [
+            "Je veux deviner un nombre",
+            "Jouons à devine un nombre",
+            "Fais-moi deviner un nombre",
+            "Devine nombre"
+          ]
+        },
+        {
+          "name": "GuessMyNumberIntent",
+          "slots": [
+            {
+              "name": "number",
+              "type": "AMAZON.NUMBER"
+            }
+          ],
+          "samples": [
+            "Le nombre {number}",
+            "C'est {number}",
+            "Est-ce que c'est {number}"
+          ]
+        },
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "SingRandomLullabyIntent",
+          "slots": [],
+          "samples": [
+            "Chante",
+            "Chante-moi quelque chose",
+            "Une berceuse",
+            "Je veux une berceuse",
+            "Chante-moi une berceuse"
+          ]
+        },
+        {
+          "name": "MessageIntent",
+          "slots": [
+            {
+              "name": "message",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "dis-lui {message} ",
+            "dis {message}",
+            "envoie {message}",
+            "envoie {message} à maman",
+            "envoie un message à maman",
+            "envoie {message} à papa",
+            "envoie un message à papa",
+            "envoie un message"
+          ]
+        },
+        {
+          "name": "AMAZON.NoIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.YesIntent",
+          "samples": []
+        },
+        {
+          "name": "TaleIntroIntent",
+          "slots": [],
+          "samples": [
+            "Raconte moi un conte",
+            "Dis moi une histoire",
+            "Une petite histoire",
+            "Raconte moi une histoire"
+          ]
+        },
+        {
+          "name": "TaleChoiceIntent",
+          "slots": [
+            {
+              "name": "number",
+              "type": "AMAZON.NUMBER"
+            }
+          ],
+          "samples": [
+            "La {number}",
+            "Histoire {number}",
+            "Conte {number}",
+            "Le {number}"
+          ]
+        },
+        {
+          "name": "TalePlayIntent",
+          "slots": [],
+          "samples": [
+            "Continue",
+            "Et après",
+            "Ensuite"
+          ]
+        },
+        {
+          "name": "ListLullabiesIntent",
+          "slots": [],
+          "samples": [
+            "Tu peux chanter quoi ",
+            "Tu as quoi comme berceuses",
+            "Liste les berceuses",
+            "Qu'est-ce que tu sais chanter",
+            "Quelles sont les berceuses disponibles "
+          ]
+        },
+        {
+          "name": "SingLullabyIntent",
+          "slots": [
+            {
+              "name": "lullaby",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "Je veux que tu me chantes {lullaby}",
+            "Tu peux chanter {lullaby} s'il te plaît",
+            "Chante-moi {lullaby}",
+            "Chante {lullaby}"
+          ]
+        },
+        {
+          "name": "DidNotUnderstandIntent",
+          "slots": [],
+          "samples": [
+            "fdsnjiyty",
+            "qfgkdjsqogfdf",
+            "oifudsisdjfsdfds",
+            "soduifhfdfqsdgd",
+            "qsdigfdkjgndfdjkldsm",
+            "kldjqskldnqiisijdjkb ",
+            "oqsdqsdqlsdjqskdlqsmd q",
+            "qsdiqsydguqsdqsd q",
+            "qsduiqsydhuqsyvd qs d",
+            "qsidyh qusygdqsud qs",
+            "qsd uhyqsudgqs ydqs d",
+            "qsdooiqsudi hqyisduqs ",
+            "qsdqsdqsdoqsj iqls d",
+            "qs dpokqsodjqsodisq d",
+            "qsdqs dhoqsui odqsd qs",
+            "doopqsdqsdqspd",
+            "qsoid jqiusd qs",
+            "ojqsdiu qsdqsdqs dqs",
+            "qs dkqs idsqijodoqsiud sqidqs ",
+            "hjfghkjgfj",
+            "jkfhjg",
+            "jfgkjhfd",
+            "gfhdf",
+            "dfgh",
+            "qsdjksqdgdsfh"
+          ]
         }
+      ],
+      "types": []
     }
+  }
 }
