@@ -33,7 +33,13 @@
                 },
                 {
                     "name": "AMAZON.HelpIntent",
-                    "samples": []
+                    "samples": [
+                        "Je sais pas quoi faire",
+                        "Aide moi",
+                        "Que faire",
+                        "Je m'ennuie",
+                        "À l'aide"
+                    ]
                 },
                 {
                     "name": "AMAZON.StopIntent",

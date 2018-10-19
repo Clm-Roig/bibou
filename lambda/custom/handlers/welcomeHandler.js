@@ -45,7 +45,12 @@ const startStateHandlers = Alexa.CreateStateHandler(config.STATES.WELCOME_STATE,
     this.handler.state = config.STATES.DID_NOT_UNDERSTAND_STATE;
     this.emitWithState("DidNotUnderstand");
   },
-
+  
+  "AMAZON.HelpIntent"() {
+    let speechOutput = `${msgH.pickOne(MSG.helpStart)} ${MSG.listActions.join(', ')}. ${msgH.pickOne(MSG.whatToDo)}`
+    this.response.speak(speechOutput).listen(msgH.pickOne(MSG.whatToDo))
+    this.emit(":responseReady")
+  },
   // ==== Unhandled
   Unhandled() {
     let speechOutput = msgH.pickOne(MSG.errors);

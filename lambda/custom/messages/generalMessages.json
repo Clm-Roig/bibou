@@ -23,5 +23,14 @@
         "Que veux-tu faire ?",
         "De quoi as-tu envie ?",
         "Jouons ensemble !"
+    ],
+    "helpStart": [
+        "Avec bibou tu peux",
+        "Bibou offre la possibilité de"
+    ],
+    "listActions": [
+        "devinez un nombre",
+        "envoyez un message",
+        "écouter une contine ou une berceuse"
     ]
 }

@@ -27,12 +27,12 @@ exports.handler = function(event, context) {
   // To enable string internationalization (i18n) features, set a resources object.
   //alexa.resources = config.languageString;
   alexa.registerHandlers(
-      guessMyNumberStateHandler,
-      newSessionHandlers,
-      sendMessageHandler,
-      singLullabyStateHandler,
-      welcomeStateHandler,
-      didNotUnderstandHandler
+    welcomeStateHandler,
+    guessMyNumberStateHandler,
+    sendMessageHandler,
+    singLullabyStateHandler,
+    newSessionHandlers,
+    didNotUnderstandHandler
   );
   alexa.execute();
 };
