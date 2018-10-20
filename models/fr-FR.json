@@ -4,36 +4,43 @@
       "invocationName": "mon bibou",
       "intents": [
         {
-          "name": "GuessMyNumberIntroIntent",
-          "slots": [],
-          "samples": [
-            "Je veux deviner un nombre",
-            "Jouons à devine un nombre",
-            "Fais-moi deviner un nombre",
-            "Devine nombre"
-          ]
+            "name": "GuessMyNumberIntroIntent",
+            "slots": [],
+            "samples": [
+                "Je veux deviner un nombre",
+                "Jouons à devine un nombre",
+                "Fais-moi deviner un nombre",
+                "Devine nombre"
+            ]
         },
         {
-          "name": "GuessMyNumberIntent",
-          "slots": [
-            {
-              "name": "number",
-              "type": "AMAZON.NUMBER"
-            }
-          ],
-          "samples": [
-            "Le nombre {number}",
-            "C'est {number}",
-            "Est-ce que c'est {number}"
-          ]
+            "name": "GuessMyNumberIntent",
+            "slots": [
+                {
+                    "name": "number",
+                    "type": "AMAZON.NUMBER"
+                }
+            ],
+            "samples": [
+                "{number}",
+                "Le nombre {number}",
+                "C'est {number}",
+                "Est-ce que c'est {number}"
+            ]
         },
         {
-          "name": "AMAZON.CancelIntent",
-          "samples": []
+            "name": "AMAZON.CancelIntent",
+            "samples": []
         },
         {
-          "name": "AMAZON.HelpIntent",
-          "samples": []
+            "name": "AMAZON.HelpIntent",
+            "samples": [
+                "Je sais pas quoi faire",
+                "Aide moi",
+                "Que faire",
+                "À l'aide",
+                "Dis moi ce que je peux faire"
+            ]
         },
         {
           "name": "AMAZON.StopIntent",
