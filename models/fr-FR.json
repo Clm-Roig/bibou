@@ -22,6 +22,7 @@
                         }
                     ],
                     "samples": [
+                        "{number}",
                         "Le nombre {number}",
                         "C'est {number}",
                         "Est-ce que c'est {number}"
@@ -37,8 +38,8 @@
                         "Je sais pas quoi faire",
                         "Aide moi",
                         "Que faire",
-                        "Je m'ennuie",
-                        "À l'aide"
+                        "À l'aide",
+                        "Dis moi ce que je peux faire"
                     ]
                 },
                 {
