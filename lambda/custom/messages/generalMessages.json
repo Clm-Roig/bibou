@@ -6,7 +6,8 @@
     "errors": [
         "Je suis désolé, je n'ai pas compris. Peux-tu répéter s'il te plaît ?",
         "Je ne comprends pas, que veux-tu faire ?",
-        "Je n'ai pas compris"
+        "Je n'ai pas compris",
+        "Je ne comprends pas"
     ],
     "greetings": [
         "Bonjour !",

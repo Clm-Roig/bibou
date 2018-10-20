@@ -1,0 +1,18 @@
+{
+  "intro": [
+    "Bienvenue dans la lecture de contes. Lequel veux-tu ?",
+    "Lisons une histoire ! Lequel veux-tu ?"
+  ],
+  "tale_1": {
+    "intro": "Conte Le rêve d'Eliot. ",
+    "contenu": "C'est comme ça, Eliot n'a ni pieds ni jambes ! Peu importe, parce qu'il a deux grands amis, l'aigle muet et le renard borgne, et tous les trois sont inséparables. Eliot aime aussi sa Mamidou à la fourrure toute douce et son Papidou, le plus viel ours des bois. Eliot n'a presque rien, mais des rêves, ça, il en a plein!. Tous les soirs, en rentrant de l'école, il s'assoit avec ses amis sur la pierre plate au milieu de la forêt. Un jour viendra, confie Eliot, on ira voir la mer. On s'envolera plus loin que le grand chêne au-delà des collines où personne ne va jamais ! Et ils parlent pendant des heures des jeux dans l'eau et des châteaux de sables qu'ils construiront sur la plage. Et quand il est vraiment très tard, Mamidou vient chercher Eliot et elle fait mine de le gronder: 'Tes rêves, Eliot, ils jaillissent de ta bouche comme le feu du volcan! Mais comme elle ne peut jamais vraiment se fâcher, elle finit par le prendre dans ses bras. Et puis ils rentrent à la maison avec la nuit par-dessus  eux."
+  },
+  "tale_2": {
+    "intro": "Le Corbeau et le Renard. ",
+    "contenu": "Maître Corbeau sur un arbre perché, Tenait en son bec un fromage. Maître Renard par l’odeur alléché Lui tint à peu près ce langage : Et bonjour, Monsieur du Corbeau. Que vous êtes joli ! que vous me semblez beau ! Sans mentir, si votre ramage Se rapporte à votre plumage, Vous êtes le Phenix des hôtes de ces bois. À ces mots le Corbeau ne se sent pas de joie : Et pour montrer sa belle voix. Il ouvre un large bec, laisse tomber sa proie. Le Renard s’en saisit, et dit : Mon bon Monsieur, Apprenez que tout flatteur Vit aux dépens de celui qui l’écoute. Cette leçon vaut bien un fromage sans doute. Le Corbeau honteux et confus Jura, mais un peu tard, qu’on ne l’y prendrait plus. Fin."
+  },
+  "tale_3": {
+    "intro": "La Mouchet la Fourmi. ",
+    "contenu": "La cigale ayant chanté Tout l'été, Se trouva fort dépourvue Quand la bise fut venue. Pas un seul petit morceau De mouche ou de vermisseau. Elle alla crier famine Chez la Fourmi sa voisine, La priant de lui prêter Quelque grain pour subsister Jusqu'à la saison nouvelle. Je vous paierai, lui dit-elle, Avant l’août, foi d'animal, Intérêt et principal. La Fourmi n'est pas prêteuse, C'est là son moindre défaut. Que faisiez-vous au temps chaud ? Dit-elle à cette emprunteuse. Nuit et jour à tout venant, Je chantais, ne vous déplaise. Vous chantiez ? j'en suis fort aise, Eh bien! dansez maintenant."
+  }
+}
