@@ -35,7 +35,8 @@
             "Ou {number}",
             "Alors {number}",
             "C'est {number}",
-            "Est-ce que c'est {number}"
+            "Est-ce que c'est {number}",
+            "{number}"
           ]
         },
         {
