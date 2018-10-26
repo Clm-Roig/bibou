@@ -7,7 +7,7 @@ const Alexa = require("alexa-sdk");
 
 const taleHandler = Alexa.CreateStateHandler(config.STATES.TALE_STATE,{
     StartTale() {
-        let speechText = tales.intro;
+        let speechText = msgH.pickOne(tales.intro) + " ";
         let i = 1;
         while("tale_" + i in tales) {
             let key = "tale_" + i;

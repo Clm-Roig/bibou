@@ -7,7 +7,7 @@ const config = require("./config");
 const guessMyNumberStateHandler = require("./handlers/guessMyNumberHandler");
 const sendMessageHandler = require("./handlers/sendMessageHandler");
 const singLullabyStateHandler = require("./handlers/singLullabyHandler");
-const taleHandler = require("./handlers/TaleHandler");
+const taleHandler = require("./handlers/taleHandler");
 const welcomeStateHandler = require("./handlers/welcomeHandler");
 
 const newSessionHandlers = {
