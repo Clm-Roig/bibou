@@ -26,12 +26,13 @@
         "Jouons ensemble !"
     ],
     "helpStart": [
-        "Avec bibou tu peux",
-        "Bibou offre la possibilité de"
+        "Avec mon Bibou tu peux",
+        "Mon Bibou te permet de"
     ],
     "listActions": [
-        "devinez un nombre",
-        "envoyez un message",
-        "écouter une contine ou une berceuse"
+        "deviner un nombre",
+        "envoyer un message à ton papa ou ta maman",
+        "écouter une berceuse",
+        "écouter une histoire"
     ]
 }
