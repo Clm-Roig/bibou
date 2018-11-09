@@ -55,6 +55,22 @@ const taleHandler = Alexa.CreateStateHandler(config.STATES.TALE_STATE,{
             this.emitWithState("SomethingElse")
         }
     },
+
+
+    "AMAZON.StopIntent"(){
+        this.attributes.speechOutput = msgH.pickOne(tales.leaveTale);
+        delete this.attributes.toSend;
+        this.handler.state = config.STATES.WELCOME_STATE;
+        this.emitWithState("SomethingElse");
+    },
+    
+    "AMAZON.CancelIntent"(){
+        this.attributes.speechOutput = msgH.pickOne(tales.leaveTale);
+        delete this.attributes.toSend;
+        this.handler.state = config.STATES.WELCOME_STATE;
+        this.emitWithState("SomethingElse");
+    },
+
     Unhandled(){
         let speechOutput = msgH.pickOne(GENERAL_MSG.errors);
         this.response.speak(speechOutput).listen(speechOutput);
