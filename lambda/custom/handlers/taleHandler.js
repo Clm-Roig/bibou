@@ -32,7 +32,6 @@ const taleHandler = Alexa.CreateStateHandler(config.STATES.TALE_STATE,{
                     nb_tale_chosen: number,
                     nb_step_tale: 1
                 });
-                //"step_" + this.attributes.nb_step_tale)
                 if (tales["tale_" + this.attributes.nb_tale_chosen].hasOwnProperty("contenu")) {
                     this.emitWithState("TalePlayIntent")
                 }
