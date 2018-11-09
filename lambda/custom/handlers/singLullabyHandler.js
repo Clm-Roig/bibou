@@ -62,11 +62,6 @@ const singLullabyHandler = Alexa.CreateStateHandler(config.STATES.SING_LULLABY_S
         this.handler.state = config.STATES.WELCOME_STATE
         this.emitWithState("SomethingElse")
     },
-    DidNotUnderstand() {
-        let speechOutput = msgH.pickOne(GENERAL_MSG.errors);
-        this.response.speak(speechOutput).listen(speechOutput);
-        this.emit(":responseReady");
-    },
     Unhandled() {
         this.handler.state = config.STATES.WELCOME_STATE
         let speechOutput = msgH.pickOne(GENERAL_MSG.errors)

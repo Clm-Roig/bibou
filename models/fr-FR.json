@@ -33,8 +33,7 @@
             "Ou {number}",
             "Alors {number}",
             "C'est {number}",
-            "Est-ce que c'est {number}",
-            "{number}"
+            "Est-ce que c'est {number}"
           ]
         },
         {
@@ -107,7 +106,6 @@
           "name": "TaleIntroIntent",
           "slots": [],
           "samples": [
-            "Raconte moi un conte",
             "Dis moi une histoire",
             "Une petite histoire",
             "Raconte moi une histoire",
@@ -124,10 +122,12 @@
             }
           ],
           "samples": [
+            "L'Histoire {number} s'il te plait",
+            "Histoire {number} s'il te plait",
+            "{number}",
+            "L'histoire {number}",
             "La {number}",
-            "Histoire {number}",
-            "Conte {number}",
-            "Le {number}"
+            "Histoire {number}"
           ]
         },
         {
@@ -163,40 +163,6 @@
             "Tu peux chanter {lullaby} s'il te plaît",
             "Chante-moi {lullaby}",
             "Chante {lullaby}"
-          ]
-        },
-        {
-          "name": "DidNotUnderstandIntent",
-          "slots": [],
-          "samples": [
-            "fdsnjiyty",
-            "qfgkdjsqogfdf",
-            "oifudsisdjfsdfds",
-            "soduifhfdfqsdgd",
-            "qsdigfdkjgndfdjkldsm",
-            "kldjqskldnqiisijdjkb ",
-            "oqsdqsdqlsdjqskdlqsmd q",
-            "qsdiqsydguqsdqsd q",
-            "qsduiqsydhuqsyvd qs d",
-            "qsidyh qusygdqsud qs",
-            "qsd uhyqsudgqs ydqs d",
-            "qsdooiqsudi hqyisduqs ",
-            "qsdqsdqsdoqsj iqls d",
-            "qs dpokqsodjqsodisq d",
-            "qsdqs dhoqsui odqsd qs",
-            "doopqsdqsdqspd",
-            "qsoid jqiusd qs",
-            "ojqsdiu qsdqsdqs dqs",
-            "qs dkqs idsqijodoqsiud sqidqs ",
-            "hjfghkjgfj",
-            "jkfhjg",
-            "jfgkjhfd",
-            "gfhdf",
-            "dfgh",
-            "qsdjksqdgdsfh",
-            "qiosdjqsiojdsqdqsdqsd ssdds o",
-            "poiioazea afsdfsd",
-            "poisidq qsdqo"
           ]
         }
       ],

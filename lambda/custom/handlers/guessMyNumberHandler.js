@@ -70,12 +70,6 @@ const guessMyNumberHandler = Alexa.CreateStateHandler(config.STATES.GUESS_MY_NUM
     this.response.speak(speechOutput).listen(speechOutput);
     this.emit(":responseReady");
   },
-
-  DidNotUnderstand() {
-    let speechOutput = msgH.pickOne(GENERAL_MSG.errors);
-    this.response.speak(speechOutput).listen(speechOutput);
-    this.emit(":responseReady");
-  },
   
   Unhandled() {
     let speechOutput = msgH.pickOne(GENERAL_MSG.errors);

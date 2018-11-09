@@ -7,7 +7,7 @@ const msgH = require("../messages/msgHelper");
 
 const startStateHandlers = Alexa.CreateStateHandler(config.STATES.WELCOME_STATE, {
     Welcome() {
-        let speechOutput = msgH.pickOne(MSG.greetings);
+        let speechOutput = `${msgH.pickOne(MSG.greetings)} ${msgH.pickOne(MSG.helpStart)} ${MSG.listActions.join(', ')}. ${msgH.pickOne(MSG.whatToDo)}`;
         this.response.speak(speechOutput).listen(speechOutput);
         this.emit(":responseReady");
     },
@@ -43,11 +43,6 @@ const startStateHandlers = Alexa.CreateStateHandler(config.STATES.WELCOME_STATE,
     SingRandomLullabyIntent() {
         this.handler.state = config.STATES.SING_LULLABY_STATE;
         this.emitWithState("StartRandomSinging");
-    },
-    DidNotUnderstandIntent() {
-        let speechOutput = msgH.pickOne(MSG.errors);
-        this.response.speak(speechOutput).listen(speechOutput);
-        this.emit(":responseReady");
     },
 
     "AMAZON.HelpIntent"() {

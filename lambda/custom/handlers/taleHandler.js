@@ -11,7 +11,7 @@ const taleHandler = Alexa.CreateStateHandler(config.STATES.TALE_STATE,{
         let i = 1;
         while("tale_" + i in tales) {
             let key = "tale_" + i;
-            speechText =  speechText + i +" " + tales[key]["intro"];
+            speechText =  `${speechText} <say-as interpret-as=\"cardinal\"> ${i} <break time="0.05s"/> </say-as> ${tales[key]["intro"]} <break time="0.1s"/>`;
             i = i+1
         }
         Object.assign(this.attributes, {
@@ -50,36 +50,11 @@ const taleHandler = Alexa.CreateStateHandler(config.STATES.TALE_STATE,{
     },
     TalePlayIntent() {
         if(this.attributes.state === config.STATES.TALE_PLAY_STATE) {
-            let speechOutput = tales["tale_" + this.attributes.nb_tale_chosen]["contenu"];
+            let speechOutput = `${tales["tale_" + this.attributes.nb_tale_chosen]["contenu"]} <break time="0.05s"/> Fin de l'histoire.` ;
             this.handler.state = config.STATES.WELCOME_STATE;
             this.attributes.speechOutput = speechOutput;
             this.emitWithState("SomethingElse")
-            // if (tales["tale_" + this.attributes.nb_tale_chosen].hasOwnProperty("step_" + this.attributes.nb_step_tale)) {
-            //     speechOutput = tales["tale_" + this.attributes.nb_tale_chosen]["step_" + this.attributes.nb_step_tale];
-            //     console.log("step_" + (this.attributes.nb_step_tale+1))
-            //     if (!tales["tale_" + (this.attributes.nb_tale_chosen)].hasOwnProperty("step_" + (this.attributes.nb_step_tale+1))) {
-            //         speechOutput = speechOutput + ". Fin.";
-            //         Object.assign(this.attributes, {
-            //             nb_tale_chosen: null,
-            //             nb_step_tale: null
-            //         });
-            //         this.handler.state = config.STATES.WELCOME_STATE;
-            //         this.attributes.speechOutput = speechOutput;
-            //         this.emitWithState("SomethingElse")
-            //     } else {
-            //         Object.assign(this.attributes, {
-            //             nb_step_tale: this.attributes.nb_step_tale + 1
-            //         });
-            //         this.response.speak(speechOutput).listen(speechOutput);
-            //         this.emit(":responseReady");
-            //     }
-            // }
         }
-    },
-    DidNotUnderstand() {
-        let speechOutput = msgH.pickOne(GENERAL_MSG.errors);
-        this.response.speak(speechOutput).listen(speechOutput);
-        this.emit(":responseReady");
     },
     Unhandled(){
         let speechOutput = msgH.pickOne(GENERAL_MSG.errors);
