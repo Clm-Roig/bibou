@@ -36,7 +36,7 @@ const singLullabyHandler = Alexa.CreateStateHandler(config.STATES.SING_LULLABY_S
         var lullabiesNames = Array()
         LULLABIES.forEach(x => lullabiesNames.push(x.names[0]))
         let speechOutput = beginningMsg.concat(lullabiesNames.slice(0, -1).join(', ') + ' et ' + lullabiesNames.slice(-1)) + "."
-        this.handler.state = config.STATES.WELCOME_STATE
+        this.handler.state = config.STATES.SING_LULLABY_STATE
         this.response.speak(speechOutput).listen(speechOutput)
         this.emit(":responseReady")
     },
@@ -51,17 +51,30 @@ const singLullabyHandler = Alexa.CreateStateHandler(config.STATES.SING_LULLABY_S
         } else {
             speechOutput = "Désolé, je ne connais pas cette berceuse."
         }
-        this.handler.state = config.STATES.WELCOME_STATE
+        this.handler.state = config.STATES.SING_LULLABY_STATE
         this.response.speak(speechOutput).listen(speechOutput)
-        this.emitWithState("SomethingElse")
+        this.emit(":responseReady")
     },
 
     StartRandomSinging() {
         let lullaby_url = LULLABIES[Math.floor(Math.random() * LULLABIES.length)].url
         this.attributes.speechOutput = "<audio src='" + lullaby_url + "'/>"
-        this.handler.state = config.STATES.WELCOME_STATE
-        this.emitWithState("SomethingElse")
+        this.handler.state = config.STATES.SING_LULLABY_STATE
+        this.emit(":responseReady")
     },
+    
+    "AMAZON.StopIntent"(){
+        this.attributes.speechOutput = msgH.pickOne(MSG.leaveLullaby);
+        this.handler.state = config.STATES.WELCOME_STATE;
+        this.emitWithState("SomethingElse");
+    },
+    
+    "AMAZON.CancelIntent"(){
+        this.attributes.speechOutput = msgH.pickOne(MSG.leaveLullaby);
+        this.handler.state = config.STATES.WELCOME_STATE;
+        this.emitWithState("SomethingElse");
+    },
+
     Unhandled() {
         this.handler.state = config.STATES.WELCOME_STATE
         let speechOutput = msgH.pickOne(GENERAL_MSG.errors)

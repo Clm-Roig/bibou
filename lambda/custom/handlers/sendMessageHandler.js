@@ -85,6 +85,21 @@ const sendMessageHandler = Alexa.CreateStateHandler(config.STATES.MESSAGE_STATE,
         this.handler.state = config.STATES.WELCOME_STATE;
         this.emitWithState("SomethingElse");
     },
+
+    "AMAZON.StopIntent"(){
+        this.attributes.speechOutput = msgH.pickOne(MSG.DIDNT_SEND_MESSAGE);
+        delete this.attributes.toSend;
+        this.handler.state = config.STATES.WELCOME_STATE;
+        this.emitWithState("SomethingElse");
+    },
+    
+    "AMAZON.CancelIntent"(){
+        this.attributes.speechOutput = msgH.pickOne(MSG.DIDNT_SEND_MESSAGE);
+        delete this.attributes.toSend;
+        this.handler.state = config.STATES.WELCOME_STATE;
+        this.emitWithState("SomethingElse");
+    },
+
     Unhandled() {
         let speechOutput = "Je n'ai pas compris.";
         this.response.speak(speechOutput).listen(speechOutput);
