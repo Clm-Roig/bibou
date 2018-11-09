@@ -11,6 +11,9 @@
       "category": "EDUCATION_AND_REFERENCE",
       "distributionCountries": []
     },
+    "privacyAndCompliance": {
+      "isChildDirected": true
+    },
     "apis": {
       "custom": {
         "endpoint": {
@@ -19,7 +22,6 @@
         "interfaces": []
       }
     },
-    "isChildDirected": true,
     "manifestVersion": "1.0"
   }
 }
