@@ -8,5 +8,10 @@
         "Désolé, je ne connais pas cette berceuse.",
         "Je ne connais pas cette berceuse.",
         "Je ne la connais pas, désolé."
+    ],
+    "leaveLullaby": [
+        "La musique s'est arrêté",
+        "La barceuse s'est arrêté",
+        "Retour au menu"
     ]
 }
