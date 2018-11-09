@@ -19,6 +19,7 @@
         "interfaces": []
       }
     },
+    "isChildDirected": true,
     "manifestVersion": "1.0"
   }
 }
