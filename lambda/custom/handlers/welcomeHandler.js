@@ -57,6 +57,17 @@ const startStateHandlers = Alexa.CreateStateHandler(config.STATES.WELCOME_STATE,
         this.emit(":responseReady");
     },
 
+    "AMAZON.NoIntent"(){
+        const speechOutput = `D'accord, au revoir` 
+        this.response.speak(speechOutput);
+        this.emit(":responseReady");
+    },
+
+    "AMAZON.YesIntent"(){ 
+        this.response.speak(speechOutput);
+        this.emit("Welcome");
+    },
+
     "AMAZON.CancelIntent"(){
         const speechOutput = `A bientôt` 
         this.response.speak(speechOutput);

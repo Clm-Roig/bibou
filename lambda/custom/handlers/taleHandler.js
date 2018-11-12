@@ -50,9 +50,8 @@ const taleHandler = Alexa.CreateStateHandler(config.STATES.TALE_STATE,{
     TalePlayIntent() {
         if(this.attributes.state === config.STATES.TALE_PLAY_STATE) {
             let speechOutput = `${tales["tale_" + this.attributes.nb_tale_chosen]["contenu"]} <break time="0.05s"/> Fin de l'histoire.` ;
-            this.handler.state = config.STATES.WELCOME_STATE;
             this.attributes.speechOutput = speechOutput;
-            this.emitWithState("SomethingElse")
+            this.emit(":responseReady").listen("Veux-tu en écouter une autre ?")
         }
     },
 
@@ -65,6 +64,17 @@ const taleHandler = Alexa.CreateStateHandler(config.STATES.TALE_STATE,{
     },
     
     "AMAZON.CancelIntent"(){
+        this.attributes.speechOutput = msgH.pickOne(tales.leaveTale);
+        delete this.attributes.toSend;
+        this.handler.state = config.STATES.WELCOME_STATE;
+        this.emitWithState("SomethingElse");
+    },
+
+    "AMAZON.NoIntent"(){
+        this.emitWithState("StartTale");
+    },
+
+    "AMAZON.YesIntent"(){
         this.attributes.speechOutput = msgH.pickOne(tales.leaveTale);
         delete this.attributes.toSend;
         this.handler.state = config.STATES.WELCOME_STATE;
