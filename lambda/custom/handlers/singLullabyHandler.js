@@ -14,16 +14,16 @@ const LULLABIES = Array(
         "url": "https://s3.amazonaws.com/bibou/little_cat.mp3"
     },
     {
+        "names": ["étoile du matin", "l'étoile du matin", "l 'étoile du matin"],
+        "url": "https://s3.amazonaws.com/bibou/morning_star.mp3"
+    },
+    {
         "names": ["dodo"],
         "url": "https://s3.amazonaws.com/bibou/sleep_music.mp3"
     },
     {
         "names": ["doux rêve", "doux rêves"],
         "url": "https://s3.amazonaws.com/bibou/sweet_dreams.mp3"
-    },
-    {
-        "names": ["étoile du matin", "l'étoile du matin", "l 'étoile du matin"],
-        "url": "https://s3.amazonaws.com/bibou/morning_star.mp3"
     }
 )
 
@@ -35,9 +35,10 @@ const singLullabyHandler = Alexa.CreateStateHandler(config.STATES.SING_LULLABY_S
         let beginningMsg = msgH.pickOne(MSG.listLullabies) + " "
         var lullabiesNames = Array()
         LULLABIES.forEach(x => lullabiesNames.push(x.names[0]))
-        let speechOutput = beginningMsg.concat(lullabiesNames.slice(0, -1).join(', ') + ' et ' + lullabiesNames.slice(-1)) + "."
+        let speechOutput = beginningMsg.concat(lullabiesNames.slice(0, -1).join(', ') + ', et ' + lullabiesNames.slice(-1)) + "."
+        
         this.handler.state = config.STATES.WELCOME_STATE
-        this.response.speak(speechOutput).listen(speechOutput)
+        this.attributes.speechOutput = speechOutput;
         this.emitWithState("SomethingElse")
     },
 
@@ -52,13 +53,14 @@ const singLullabyHandler = Alexa.CreateStateHandler(config.STATES.SING_LULLABY_S
             speechOutput = "Désolé, je ne connais pas cette berceuse."
         }
         this.handler.state = config.STATES.WELCOME_STATE
-        this.response.speak(speechOutput).listen(speechOutput)
+        this.attributes.speechOutput = speechOutput;
         this.emitWithState("SomethingElse")
     },
 
     StartRandomSinging() {
         let lullaby_url = LULLABIES[Math.floor(Math.random() * LULLABIES.length)].url
         this.attributes.speechOutput = "<audio src='" + lullaby_url + "'/>"
+
         this.handler.state = config.STATES.WELCOME_STATE
         this.emitWithState("SomethingElse")
     },
