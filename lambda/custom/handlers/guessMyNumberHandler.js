@@ -66,7 +66,7 @@ const guessMyNumberHandler = Alexa.CreateStateHandler(config.STATES.GUESS_MY_NUM
   "AMAZON.StopIntent"(){
     this.handler.state = config.STATES.WELCOME_STATE;
     Object.keys(defaultState).forEach((prop) => delete this.attributes[prop]);
-    const speechOutput = `Tu as bien quitté le jeu` 
+    const speechOutput = `Tu as bien quitté le jeu, tu es revenu au menu principal, que veux tu faire ?`
     this.response.speak(speechOutput).listen(speechOutput);
     this.emit(":responseReady");
   },
@@ -74,7 +74,7 @@ const guessMyNumberHandler = Alexa.CreateStateHandler(config.STATES.GUESS_MY_NUM
   "AMAZON.CancelIntent"(){
     this.handler.state = config.STATES.WELCOME_STATE;
     Object.keys(defaultState).forEach((prop) => delete this.attributes[prop]);
-    const speechOutput = `Tu as bien quitté le jeu` 
+    const speechOutput = `Tu as bien quitté le jeu, tu es revenu au menu principal, que veux tu faire ?` 
     this.response.speak(speechOutput).listen(speechOutput);
     this.emit(":responseReady");
   },
