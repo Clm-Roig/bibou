@@ -46,6 +46,12 @@ const taleHandler = Alexa.CreateStateHandler(config.STATES.TALE_STATE,{
                 this.response.speak(speechOutput).listen(speechOutput);
                 this.emit(":responseReady");
             }
+        } else {
+            const speechOutput = `Je suis désolé mais tu ne peux pas choisir une histoire sans avoir la liste des histoires
+            disponibles`
+            this.response.speak(speechOutput)
+            this.handler.state = config.STATES.WELCOME_STATE;
+            this.emitWithState("SomethingElse");
         }
     },
     TalePlayIntent() {
