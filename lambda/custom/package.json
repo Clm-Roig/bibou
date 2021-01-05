@@ -12,6 +12,6 @@
   "dependencies": {
     "alexa-sdk": "^1.0.25",
     "aws-sdk": "^2.277.1",
-    "axios": "^0.18.1"
+    "axios": "^0.21.1"
   }
 }
