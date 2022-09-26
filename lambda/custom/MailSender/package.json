@@ -10,6 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "node-mailjet": "^3.3.0"
+    "node-mailjet": "^3.4.1"
   }
 }
